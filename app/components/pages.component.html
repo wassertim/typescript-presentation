@@ -1,0 +1,8 @@
+<div class="col-sm-4">
+  <ul class="nav nav-pills nav-stacked">
+    <li *ngFor="#page of pages" [class.active]="page.id===pageIndex"><a [routerLink]="['Pages', {id: page.id}]">{{page.name}}</a></li>
+  </ul>
+</div>
+<div id="main" class="col-sm-8">
+  <div id="main"></div>
+</div>

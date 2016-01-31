@@ -1,42 +1,31 @@
-import {HighlightDirective} from './highlight.directive';
-import {Component, DynamicComponentLoader, OnInit, Injector} from "angular2/core";
+import {RouteConfig, RouterOutlet, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from "angular2/core";
+import {PagesComponent} from './pages.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/components/app.component.html',
-    directives: [HighlightDirective]
+    directives: [ROUTER_DIRECTIVES]
 })
-export class AppComponent implements OnInit {
-  loader: DynamicComponentLoader;
-  injector: Injector;
+@RouteConfig([
+  {path:'/:id', name: 'Pages', component: PagesComponent}
+])
+export class AppComponent {
   pages = [
     {
+      id: 0,
       name: 'Basic Types',
       url: 'app/pages/basic-types.html'
+    },
+    {
+      id: 1,
+      name: 'Interfaces',
+      url: 'app/pages/interfaces.html'
+    },
+    {
+      id: 2,
+      name: 'Classes',
+      url: 'app/pages/classes.html'
     }
   ];
-
-  constructor(dcl: DynamicComponentLoader, injector: Injector) {
-    this.loader = dcl;
-    this.injector = injector;
-  }
-
-  ngOnInit() {
-    window.fetch(this.pages[0].url).then((response) => {
-      return response.text();
-    }).then((body) => {
-      this.loader.loadAsRoot(
-        this.toComponent(body, [HighlightDirective]),
-        '#main',
-        this.injector
-      );
-    });
-  }
-
-  toComponent(template, directives = []) {
-    @Component({ selector: 'fake-component', template, directives })
-    class FakeComponent {}
-
-    return FakeComponent;
-  }
 }
