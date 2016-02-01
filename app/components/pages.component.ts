@@ -3,7 +3,6 @@ import {RouteConfig, RouterOutlet, ROUTER_DIRECTIVES, RouteParams} from 'angular
 import {Component, DynamicComponentLoader, OnInit, Injector} from "angular2/core";
 
 interface IPage {
-  id: number,
   name: string,
   url: string
 }
@@ -17,19 +16,24 @@ export class PagesComponent implements OnInit {
   injector: Injector;
   pages: IPage[] = [
     {
-      id: 0,
+      name: 'Introduction',
+      url: 'app/pages/introduction.html'
+    },
+    {
       name: 'Basic Types',
       url: 'app/pages/basic-types.html'
     },
     {
-      id: 1,
       name: 'Interfaces',
       url: 'app/pages/interfaces.html'
     },
     {
-      id: 2,
       name: 'Classes',
       url: 'app/pages/classes.html'
+    },
+    {
+      name: 'Tools',
+      url: 'app/pages/tools.html'
     }
   ];
 

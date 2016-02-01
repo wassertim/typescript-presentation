@@ -10,22 +10,4 @@ import {PagesComponent} from './pages.component';
 @RouteConfig([
   {path:'/:id', name: 'Pages', component: PagesComponent}
 ])
-export class AppComponent {
-  pages = [
-    {
-      id: 0,
-      name: 'Basic Types',
-      url: 'app/pages/basic-types.html'
-    },
-    {
-      id: 1,
-      name: 'Interfaces',
-      url: 'app/pages/interfaces.html'
-    },
-    {
-      id: 2,
-      name: 'Classes',
-      url: 'app/pages/classes.html'
-    }
-  ];
-}
+export class AppComponent {}
