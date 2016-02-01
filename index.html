@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="assets/prism.css">
     <script src="assets/prism.js"></script>
-
+    <base id="baseUrl" href="/typescript-presentation/">
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
@@ -34,8 +34,12 @@
       });
       System.import('app/main')
             .then(null, console.error.bind(console));
+      
+      if (document.location.hostname == "localhost")
+        document.getElementById('baseUrl').href = '/';
+
     </script>
-    <base href="/typescript-presentation/">
+
   </head>
 
   <!-- 3. Display the application -->
