@@ -1,5 +1,7 @@
 import {HighlightDirective} from './highlight.directive';
-import {RouteConfig, RouterOutlet, ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {Http} from 'angular2/http';
+import {Observable} from 'rxjs/Observable';
 import {Component, DynamicComponentLoader, OnInit, Injector} from "angular2/core";
 
 interface IPage {
@@ -12,8 +14,6 @@ interface IPage {
     directives: [HighlightDirective, ROUTER_DIRECTIVES]
 })
 export class PagesComponent implements OnInit {
-  loader: DynamicComponentLoader;
-  injector: Injector;
   pages: IPage[] = [
     {
       name: 'Introduction',
@@ -39,25 +39,33 @@ export class PagesComponent implements OnInit {
 
   pageIndex: number = 0;
 
-  constructor(dcl: DynamicComponentLoader, injector: Injector, routeParams: RouteParams) {
-    this.loader = dcl;
-    this.injector = injector;
+  constructor(
+    private loader: DynamicComponentLoader,
+    private injector: Injector,
+    private http: Http,
+    routeParams: RouteParams
+  ) {
     this.pageIndex = +routeParams.get('id');
   }
-
+  private logAndPassOn (error: Error) {
+    // in a real world app, we may send the server to some remote logging infrastructure
+    // instead of just logging it to the console
+    console.error(error);
+    return Observable.throw(error);
+  }
   ngOnInit() {
-    window.fetch(this.pages[this.pageIndex].url).then((response) => {
+    this.http.get(this.pages[this.pageIndex].url).toPromise().then(response => {
       return response.text();
-    }).then((body) => {
+    }).then(body => {
       this.loader.loadAsRoot(
         this.toComponent(body, [HighlightDirective]),
         '#main',
         this.injector
       );
-    });
+    });    
   }
 
-  toComponent(template, directives = []) {
+  toComponent(template: string, directives = []) {
     @Component({ selector: 'fake-component', template, directives })
     class FakeComponent {}
 
