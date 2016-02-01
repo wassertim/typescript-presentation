@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h2>Interfaces</h2>
+</div>
+<h3>Function Interfaces</h3>
+<pre>
+  Typescript
+  <code class="language-typescript" highlight>
+    interface IJQuery {
+      (selector: String): DOMObject;
+    }
+
+    var jQuery: IJQuery;
+    jQuery = function(s: String) {
+      return selectDOMObject();
+    }
+  </code>
+</pre>

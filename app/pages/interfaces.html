@@ -1,65 +1,6 @@
-<div class="page-header">
-  <h2>Interfaces</h2>
-</div>
-<h3>Object's shape</h3>
-<pre>
-  <code highlight class="language-typescript">
-    interface ICountry {
-      title: string;
-      getPopulation(): number;
-    }
-
-    var country: ICountry = {
-      title: 'Germany',
-      getPopulation: () => 80620000;
-    }
-  </code>
-</pre>
 
 
-<h3>Function Types</h3>
-<pre>
-  <code class="language-typescript" highlight>
-    interface IJQuery {
-      (selector: String): DOMObject;
-    }
 
-    var jQuery: IJQuery;
-    jQuery = function(s: String) {
-      return selectDOMObject();
-    }
-  </code>
-</pre>
-<h3>Array Types</h3>
-<pre>
-  <code class="language-typescript" highlight>
-    interface StringArray {
-      [index: number]: string;
-    }
-
-    var myArray: StringArray;
-    myArray = ["Bob", "Fred"];
-  </code>
-</pre>
-<h3>Class Types</h3>
-<pre>
-  <code class="language-typescript" highlight>
-    interface ICity {
-      title: string;
-      population: number;
-    }
-
-    class City implements ICity {
-      title: string;
-      population: number;
-
-      constructor(title: string, population: number) {
-        this.title = title;
-        this.population = population;
-      }
-    }
-  </code>
-</pre>
 <h3>Extending Interfaces</h3>
 <pre>
   <code class="language-typescript" highlight>
@@ -74,20 +15,5 @@
     var square = &lt;Square&gt;{};
     square.color = "blue";
     square.sideLength = 10;
-  </code>
-</pre>
-<h3>Hybrid Types</h3>
-<pre>
-  <code class="language-typescript" highlight>
-    interface Counter {
-      (start: number): string;
-      interval: number;
-      reset(): void;
-    }
-
-    var c: Counter;
-    c(10);
-    c.reset();
-    c.interval = 5.0;
   </code>
 </pre>

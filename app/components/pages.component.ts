@@ -29,8 +29,32 @@ export class PagesComponent implements OnInit {
       url: 'app/pages/enums.html'
     },
     {
+      name: "Object Interfaces",
+      url: 'app/pages/interfaces-object-shape.html'
+    },
+    {
+      name: "Function Interfaces",
+      url: 'app/pages/function-interfaces.html'
+    },
+    {
+      name: "Array Interfaces",
+      url: 'app/pages/array-interfaces.html'
+    },
+    {
+      name: "Class Interfaces",
+      url: 'app/pages/class-interfaces.html'
+    },
+    {
+      name: "Hybrid Interfaces",
+      url: 'app/pages/hybrid-interfaces.html'
+    },
+    {
       name: 'Interfaces',
       url: 'app/pages/interfaces.html'
+    },
+    {
+      name: 'Optional properties',
+      url: 'app/pages/optional-properties.html'
     },
     {
       name: 'Classes',

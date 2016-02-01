@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h2>Interfaces</h2>
+</div>
+<h3>Class Interfaces</h3>
+<pre>
+  Typescript
+  <code class="language-typescript" highlight>
+    interface ICity {
+      title: string;
+      population: number;
+    }
+
+    class City implements ICity {
+      title: string;
+      population: number;
+
+      constructor(title: string, population: number) {
+        this.title = title;
+        this.population = population;
+      }
+    }
+  </code>
+</pre>

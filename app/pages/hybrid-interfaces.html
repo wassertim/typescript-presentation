@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h2>Interfaces</h2>
+</div>
+<h3>Hybrid Interfaces</h3>
+<pre>
+  Typescript
+  <code class="language-typescript" highlight>
+    interface Counter {
+      (start: number): string;
+      interval: number;
+      reset(): void;
+    }
+
+    var c: Counter;
+    c(10);
+    c.reset();
+    c.interval = 5.0;
+  </code>
+</pre>
