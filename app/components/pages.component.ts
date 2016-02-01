@@ -2,7 +2,8 @@ import {HighlightDirective} from './highlight.directive';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import {Http} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
-import {Component, DynamicComponentLoader, OnInit, Injector} from "angular2/core";
+import {Component, DynamicComponentLoader} from "angular2/core";
+import {OnInit, Injector} from 'angular2/core';
 
 interface IPage {
   name: string,
@@ -36,7 +37,6 @@ export class PagesComponent implements OnInit {
       url: 'app/pages/tools.html'
     }
   ];
-
   pageIndex: number = 0;
 
   constructor(
@@ -47,12 +47,7 @@ export class PagesComponent implements OnInit {
   ) {
     this.pageIndex = +routeParams.get('id');
   }
-  private logAndPassOn (error: Error) {
-    // in a real world app, we may send the server to some remote logging infrastructure
-    // instead of just logging it to the console
-    console.error(error);
-    return Observable.throw(error);
-  }
+
   ngOnInit() {
     this.http.get(this.pages[this.pageIndex].url).toPromise().then(response => {
       return response.text();
@@ -62,7 +57,7 @@ export class PagesComponent implements OnInit {
         '#main',
         this.injector
       );
-    });    
+    });
   }
 
   toComponent(template: string, directives = []) {
