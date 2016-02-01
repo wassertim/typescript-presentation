@@ -4,50 +4,19 @@
 <h3>Object's shape</h3>
 <pre>
   <code highlight class="language-typescript">
-    interface ICity {
-      title: string;
-      population: number;
-      country: ICountry;
-    }
-  </code>
-</pre>
-<pre>
-  <code highlight class="language-typescript">
     interface ICountry {
       title: string;
       getPopulation(): number;
     }
-  </code>
-</pre>
-<pre>
-  <code highlight class="language-typescript">
+
     var country: ICountry = {
       title: 'Germany',
       getPopulation: () => 80620000;
     }
   </code>
 </pre>
-<pre>
-  <code highlight class="language-typescript">
-    class Country implements ICountry {
-      title = 'Russia',
-      getPopulation(): number {
-        return 143500000;
-      }
-    }
 
-    var country = new Country();
-  </code>
-</pre>
-<h3>Optional Properties</h3>
-<pre>
-  <code class="language-typescript" highlight>
-    interface IPerson {
-      age?: number;
-      gender?: string;
-    }
-  </code>
-</pre>
+
 <h3>Function Types</h3>
 <pre>
   <code class="language-typescript" highlight>

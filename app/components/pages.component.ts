@@ -25,6 +25,10 @@ export class PagesComponent implements OnInit {
       url: 'app/pages/basic-types.html'
     },
     {
+      name: 'Enums',
+      url: 'app/pages/enums.html'
+    },
+    {
       name: 'Interfaces',
       url: 'app/pages/interfaces.html'
     },

@@ -36,8 +36,9 @@
       System.import('app/main')
             .then(null, console.error.bind(console));
 
-      if (document.location.hostname == "localhost")
+      if (document.location.hostname == "localhost") {
         document.getElementById('baseUrl').href = '/';
+      }
 
     </script>
 
@@ -46,8 +47,8 @@
   <!-- 3. Display the application -->
   <body>
     <style>
-      ul {
-        font-size: 1.5em !important;
+      .feature-list {
+        font-size: 1.7em !important;
       }
       pre {
         border: 0 !important;
