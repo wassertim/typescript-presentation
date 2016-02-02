@@ -39,7 +39,23 @@ export var PAGES: IPage[] = [
   },
   {
     name: 'Classes',
-    url: 'app/pages/classes.html'
+    url: 'app/pages/create-class.html'
+  },
+  {
+    name: 'Inheritance',
+    url: 'app/pages/inheritance.html'
+  },
+  {
+    name: 'Accessors',
+    url: 'app/pages/accessors.html'
+  },
+  {
+    name: 'Modifiers',
+    url: 'app/pages/modifiers.html'
+  },
+  {
+    name: 'Modules',
+    url: 'app/pages/modules.html'
   },
   {
     name: 'Optional properties',

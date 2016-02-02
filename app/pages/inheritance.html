@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h2>Classes</h2>
+</div>
+<h3>Inheritance</h3>
+<pre>
+  Typescript
+  <code highlight class="language-typescript">
+    class Auto {
+        engine: string;
+        constructor(engine: string) {
+            this.engine = engine;
+        }
+    }
+
+    class ManlyTruck extends Auto {
+    	bigTires: bool;
+        constructor(engine: string, bigTires: bool) {
+            super(engine);
+            this.bigTires = bigTires;
+        }
+    }
+  </code>
+</pre>
+<pre>
+  Javascript
+  <code highlight class="language-typescript">
+    var __extends = (this && this.__extends) || function (d, b) {
+        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+    var Auto = (function () {
+        function Auto(engine) {
+            this.engine = engine;
+        }
+        return Auto;
+    }());
+    var ManlyTruck = (function (_super) {
+        __extends(ManlyTruck, _super);
+        function ManlyTruck(engine, bigTires) {
+            _super.call(this, engine);
+            this.bigTires = bigTires;
+        }
+        return ManlyTruck;
+    }(Auto));
+  </code>
+</pre>

@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h2>Classes</h2>
+</div>
+<h3>Modifiers</h3>
+<pre>
+  Typescript
+  <code highlight class="language-typescript">
+    class Animal {
+        private name:string;
+        constructor(theName: string) { this.name = theName; }
+    }
+
+    class Rhino extends Animal {
+    	constructor() { super("Rhino"); }
+    }
+
+    class Employee {
+        private name:string;
+        constructor(theName: string) { this.name = theName; }
+    }
+
+    var animal = new Animal("Goat");
+    var rhino = new Rhino();
+    var employee = new Employee("Bob");
+
+    animal = rhino;
+    animal = employee; //error: Animal and Employee are not compatible
+  </code>
+</pre>

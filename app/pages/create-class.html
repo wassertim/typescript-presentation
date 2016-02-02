@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h2>Classes</h2>
+</div>
+<h3>Creating a class</h3>
+<pre>
+  Typescript
+  <code highlight class="language-typescript">
+    class Car {
+        engine: string;
+        constructor (engine: string) {
+            this.engine = engine;
+        }
+
+        start() {
+            return "Started " + this.engine;
+        }
+    } 
+  </code>
+</pre>
+<pre>
+  Javascript
+  <code highlight class="language-typescript">
+    var Car = (function () {
+        function Car(engine) {
+            this.engine = engine;
+        }
+        Car.prototype.start = function () {
+            return "Started " + this.engine;
+        };
+        return Car;
+    }());
+  </code>
+</pre>
