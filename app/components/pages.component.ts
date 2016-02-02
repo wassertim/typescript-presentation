@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import {Http} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import {Component, DynamicComponentLoader} from "angular2/core";
+import {PAGES} from '../data/pages';
 import {OnInit, Injector} from 'angular2/core';
 
 interface IPage {
@@ -15,56 +16,7 @@ interface IPage {
     directives: [HighlightDirective, ROUTER_DIRECTIVES]
 })
 export class PagesComponent implements OnInit {
-  pages: IPage[] = [
-    {
-      name: 'Introduction',
-      url: 'app/pages/introduction.html'
-    },
-    {
-      name: 'Basic Types',
-      url: 'app/pages/basic-types.html'
-    },
-    {
-      name: 'Enums',
-      url: 'app/pages/enums.html'
-    },
-    {
-      name: "Object Interfaces",
-      url: 'app/pages/interfaces-object-shape.html'
-    },
-    {
-      name: "Function Interfaces",
-      url: 'app/pages/function-interfaces.html'
-    },
-    {
-      name: "Array Interfaces",
-      url: 'app/pages/array-interfaces.html'
-    },
-    {
-      name: "Class Interfaces",
-      url: 'app/pages/class-interfaces.html'
-    },
-    {
-      name: "Hybrid Interfaces",
-      url: 'app/pages/hybrid-interfaces.html'
-    },
-    {
-      name: 'Interfaces',
-      url: 'app/pages/interfaces.html'
-    },
-    {
-      name: 'Optional properties',
-      url: 'app/pages/optional-properties.html'
-    },
-    {
-      name: 'Classes',
-      url: 'app/pages/classes.html'
-    },
-    {
-      name: 'Tools',
-      url: 'app/pages/tools.html'
-    }
-  ];
+  pages: IPage[];
   pageIndex: number = 0;
 
   constructor(
@@ -76,7 +28,12 @@ export class PagesComponent implements OnInit {
     this.pageIndex = +routeParams.get('id');
   }
 
+  getPages(): IPage[] {
+    return PAGES;
+  }
+
   ngOnInit() {
+    this.pages = this.getPages();
     this.http.get(this.pages[this.pageIndex].url).toPromise().then(response => {
       return response.text();
     }).then(body => {
