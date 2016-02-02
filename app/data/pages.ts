@@ -54,12 +54,44 @@ export var PAGES: IPage[] = [
     url: 'app/pages/modifiers.html'
   },
   {
-    name: 'Modules',
-    url: 'app/pages/modules.html'
+    name: 'Static Members',
+    url: 'app/pages/static-members.html'
+  },
+  {
+    name: 'Internal Modules',
+    url: 'app/pages/internal-modules.html'
+  },
+  {
+    name: 'External Modules',
+    url: 'app/pages/external-modules.html'
+  },
+  {
+    name: 'Modules - reference, import',
+    url: 'app/pages/modules-import.html'
+  },
+  {
+    name: 'Function Overloading',
+    url: 'app/pages/function-overloading.html'
+  },
+  {
+    name: 'Default Parameters',
+    url: 'app/pages/default-parameters.html'
+  },
+  {
+    name: 'Generics',
+    url: 'app/pages/generics.html'
+  },
+  {
+    name: 'Constructor',
+    url: 'app/pages/constructor.html'
   },
   {
     name: 'Optional properties',
     url: 'app/pages/optional-properties.html'
+  },
+  {
+    name: 'Javascript Libraries',
+    url: 'app/pages/javascript-libraries.html'
   },
   {
     name: 'Tools',
