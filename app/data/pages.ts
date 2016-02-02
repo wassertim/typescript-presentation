@@ -64,11 +64,7 @@ export var PAGES: IPage[] = [
   {
     name: 'External Modules',
     url: 'app/pages/external-modules.html'
-  },
-  {
-    name: 'Modules - reference, import',
-    url: 'app/pages/modules-import.html'
-  },
+  },  
   {
     name: 'Function Overloading',
     url: 'app/pages/function-overloading.html'
