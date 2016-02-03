@@ -58,13 +58,17 @@ export var PAGES: IPage[] = [
     url: 'app/pages/static-members.html'
   },
   {
+    name: 'Constructor',
+    url: 'app/pages/constructor.html'
+  },
+  {
     name: 'Internal Modules',
     url: 'app/pages/internal-modules.html'
   },
   {
     name: 'External Modules',
     url: 'app/pages/external-modules.html'
-  },  
+  },
   {
     name: 'Function Overloading',
     url: 'app/pages/function-overloading.html'
@@ -78,8 +82,8 @@ export var PAGES: IPage[] = [
     url: 'app/pages/generics.html'
   },
   {
-    name: 'Constructor',
-    url: 'app/pages/constructor.html'
+    name: 'Mix-ins',
+    url: 'app/pages/mix-ins.html'
   },
   {
     name: 'Optional properties',

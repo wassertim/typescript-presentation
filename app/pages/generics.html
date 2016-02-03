@@ -1,1 +1,25 @@
-<h2>TODO</h2>
+<div class="page-header">
+  <h2>Generics</h2>
+</div>
+<ul class="feature-list">
+  <li>Generic classes</li>
+  <li>Generic functions</li>
+</ul>
+<pre>
+  Typescript
+  <code class="language-typescript" highlight>
+  class GenericNumber&lt;T&gt; {
+    zeroValue: T;
+    add: (x: T, y: T) => T;
+  }
+  </code>
+</pre>
+<pre>
+  Typescript
+  <code class="language-typescript" highlight>
+  function find&lt;T&gt;(n: T, s: Findable&lt;T&gt;) {
+    // ...
+  }
+  find(giraffe, myAnimals);
+  </code>
+</pre>

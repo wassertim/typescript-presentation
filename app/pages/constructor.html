@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h2>Classes</h2>
+</div>
+<h3>Constructor</h3>
+<pre>
+  Typescript
+  <code class="language-typescript" highlight>
+  class Greeter {
+      static standardGreeting = "Hello, there";
+      greeting: string;
+      greet() {
+          if (this.greeting) {
+              return "Hello, " + this.greeting;
+          }
+          else {
+              return Greeter.standardGreeting;
+          }
+      }
+  }
+  </code>
+</pre>
+<h4>The constructor function is always there</h4>
+<pre>
+  Javascript
+  <code class="language-javascript" highlight>
+    var Greeter = (function () {
+        function Greeter() {
+        }
+        Greeter.prototype.greet = function () {
+            if (this.greeting) {
+                return "Hello, " + this.greeting;
+            }
+            else {
+                return Greeter.standardGreeting;
+            }
+        };
+        Greeter.standardGreeting = "Hello, there";
+        return Greeter;
+    }());
+
+  </code>
+</pre>

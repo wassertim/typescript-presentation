@@ -6,7 +6,7 @@ import Prism from '../tds/prism';
     selector: '[highlight]'
 })
 export class HighlightDirective {
-    constructor(el: ElementRef) {
+    constructor(el: ElementRef) {              
       Prism.highlightElement(el.nativeElement);
     }
 }
